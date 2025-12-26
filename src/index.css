@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+   background: var(--background);
+}
+:root{
+  --forground: #000000;
+  --background: #ffffff;
+}
+/* p, a, span, li{
+  font-family: "Questrial", sans-serif;
+} */
+h1, h2, h3, h4, h5, p{
+font-family: "Hanken Grotesk", sans-serif;
+}
+.dark{
+   --forground: #ffffff;
+  --background: #000;
+}
+
+@theme inline{
+  --color-backgrond: var(--backgroud)
+}
+
+.innerdiv{
+  max-width: 785px;
+  margin: 0 auto;
+  padding: 0 10px; 
+}
+
