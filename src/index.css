@@ -1,69 +1,92 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-body{
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-   background: var(--background);
+  background: var(--background);
 }
-:root{
+
+:root {
+  --edge-line: #e4e4e7;
   --forground: #000000;
   --background: #ffffff;
-  --pattern-foreground: color-mix(in oklab, #e4e4e7 56%, transparent);
+  --pattern-foreground: color-mix(in oklab, var(--edge-line) 56%, transparent);
+    --dot: #000;
+    --shad-bg:  linear-gradient(356deg, rgba(255, 255, 255, 1) 49%, rgba(255, 255, 255, .8) 89%);
+    --shad-bg2: linear-gradient(10deg, rgba(255, 255, 255, 1) 59%, rgba(255, 255, 255, .7) 89%);
+  
 }
+.dark {
+  --edge-line: #202024;
+  --forground: #ffffff;
+  --background: #09090b;
+  --pattern-foreground: color-mix(in oklab, var(--edge-line) 56%, transparent);
+  --dot: #fff;
+  --shad-bg:  linear-gradient(356deg, #09090b 49%, #09090bc4 89%);
+  --shad-bg2: linear-gradient(10deg, #09090b 59%, #09090bc4 89%);
+}
+
+
+
+
 /* p, a, span, li{
   font-family: "Questrial", sans-serif;
 } */
-h1, h2, h3, h4, h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
 
-font-family: "IBM Plex Sans", sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
-p, span, a{
-font-family: "Hanken Grotesk", sans-serif;
+
+p,
+span,
+a, li {
+  font-family: "Hanken Grotesk", sans-serif;
 }
-.dark{
-   --forground: #ffffff;
-  --background: #000;
-}
+
+
 .pattern-bg {
-  background-image: repeating-linear-gradient(
-    315deg,
-    var(--pattern-foreground) 0,
-    var(--pattern-foreground) 1px,
-    transparent 1px,
-    transparent 50%
-  );
+  background-image: repeating-linear-gradient(315deg,
+      var(--pattern-foreground) 0,
+      var(--pattern-foreground) 1px,
+      transparent 1px,
+      transparent 50%);
   background-size: 10px 10px;
 }
 
 .dots-bg {
-  background-image: radial-gradient(
-    circle,
-    #000 1px,
-    transparent 1px
-  );
+  background-image: radial-gradient(circle,
+      var(--dot) 1px,
+      transparent 1px);
   background-position: 10px;
   background-size: 10px 10px;
 }
-.gg{
-  background: linear-gradient(10deg,rgba(255, 255, 255, 1) 59%,rgba(255, 255, 255, .7) 89%);
+
+.gg {
+  background: linear-gradient(10deg, rgba(255, 255, 255, 1) 59%, rgba(255, 255, 255, .7) 89%);
 }
 
-.gg-90{
-  background: linear-gradient(356deg,rgba(255, 255, 255, 1) 49%,rgba(255, 255, 255, .8) 89%);
+.gg-90 {
+  background: linear-gradient(356deg, rgba(255, 255, 255, 1) 49%, rgba(255, 255, 255, .8) 89%);
 }
-@theme inline{
+
+@theme inline {
   --color-backgrond: var(--backgroud)
 }
 
-.max-width{
+.max-width {
   max-width: 785px;
   margin: 0 auto;
- 
+
 }
-@media (max-width:767px){
-  .max-width{
+
+@media (max-width:767px) {
+  .max-width {
     margin: 0 8px;
   }
 }
-

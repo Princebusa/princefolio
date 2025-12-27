@@ -56,7 +56,7 @@ const item = {
 export default function bio() {
   return (
     <>
-      <div className="max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[#e4e4e7]">
+      <div className="max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -69,19 +69,19 @@ export default function bio() {
           and great user experiences.
         </motion.p>
       </div>
-      <div className="relative before:z-10 after:content-[''] after:w-full after:h-[1px] after:left-0 after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-full before:h-[1px] before:left-0 before:bottom-0 before:absolute before:bg-[#e4e4e7]">
-        <div className="pattern-bg max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[#e4e4e7]">
+      <div className="relative before:z-10 after:content-[''] after:w-full after:h-[1px] after:left-0 after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-full before:h-[1px] before:left-0 before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
+        <div className="pattern-bg max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
           <motion.h3
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
-            className="bg-white w-25 md:leading-9 leading-8 px-4 py-0 text-[#09090b] relative font-medium md:text-[27px] text-[22px] after:content-[''] after:w-[1px] after:h-full after:right-0 after:top-0 after:absolute after:bg-[#e4e4e7]"
+            className="bg-white dark:bg-[#09090b] w-25 md:leading-9 leading-8 px-4 py-0 text-[var(--forground)] relative font-medium md:text-[27px] text-[22px] after:content-[''] after:w-[1px] after:h-full after:right-0 after:top-0 after:absolute after:bg-[var(--edge-line)]"
           >
             Stack
           </motion.h3>
         </div>
-        <div className="relative after:content-[''] after:w-full after:h-[1px] after:left-0 after:top-0 after:absolute after:bg-[#e4e4e7]">
-          <div className="bg-gray-100/40 max-width flex gap-4 p-4 relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[#e4e4e7]">
+        <div className="relative after:content-[''] after:w-full after:h-[1px] after:left-0 after:top-0 after:absolute after:bg-[var(--edge-line)]">
+          <div className="bg-gray-100/40 dark:bg-gray-100/5 max-width flex gap-4 p-4 relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
             <motion.div
               variants={container}
               initial="hidden"
