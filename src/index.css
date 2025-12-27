@@ -9,25 +9,61 @@ body{
 :root{
   --forground: #000000;
   --background: #ffffff;
+  --pattern-foreground: color-mix(in oklab, #e4e4e7 56%, transparent);
 }
 /* p, a, span, li{
   font-family: "Questrial", sans-serif;
 } */
-h1, h2, h3, h4, h5, p{
+h1, h2, h3, h4, h5{
+
+font-family: "IBM Plex Sans", sans-serif;
+}
+p, span, a{
 font-family: "Hanken Grotesk", sans-serif;
 }
 .dark{
    --forground: #ffffff;
   --background: #000;
 }
+.pattern-bg {
+  background-image: repeating-linear-gradient(
+    315deg,
+    var(--pattern-foreground) 0,
+    var(--pattern-foreground) 1px,
+    transparent 1px,
+    transparent 50%
+  );
+  background-size: 10px 10px;
+}
 
+.dots-bg {
+  background-image: radial-gradient(
+    circle,
+    #000 1px,
+    transparent 1px
+  );
+  background-position: 10px;
+  background-size: 10px 10px;
+}
+.gg{
+  background: linear-gradient(10deg,rgba(255, 255, 255, 1) 59%,rgba(255, 255, 255, .7) 89%);
+}
+
+.gg-90{
+  background: linear-gradient(356deg,rgba(255, 255, 255, 1) 49%,rgba(255, 255, 255, .8) 89%);
+}
 @theme inline{
   --color-backgrond: var(--backgroud)
 }
 
-.innerdiv{
+.max-width{
   max-width: 785px;
   margin: 0 auto;
-  padding: 0 10px; 
+ 
+}
+@media (max-width:767px){
+  .max-width{
+    margin: 0 8px;
+  }
 }
 

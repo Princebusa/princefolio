@@ -1,19 +1,99 @@
+import ts from "../assets/tech/typescript.svg";
+import js from "../assets/tech/js.svg";
+import node from "../assets/tech/nodejs.svg";
+import next from "../assets/tech/nextjs2-light.svg";
+import React from "../assets/tech/react.svg";
+import bun from "../assets/tech/bun.svg";
+import tailwind from "../assets/tech/tailwindcss.svg";
+import mongo from "../assets/tech/mongodb.svg";
+import sql from "../assets/tech/mysql.svg";
+import git from "../assets/tech/git.svg";
+import shdcn from "../assets/tech/shadcn-ui-light.svg";
+import tanstack from "../assets/tech/tanstack-light.svg";
+import { motion } from "motion/react";
+
+const tech = {
+  ts,
+  js,
+  node,
+  sql,
+  next,
+  bun,
+  React,
+  tailwind,
+  mongo,
+  git,
+  shdcn,
+  tanstack,
+};
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.03,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const item = {
+  hidden: {
+    opacity: 0,
+    y: 4,
+    filter: "blur(4px)",
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0,
+     ease: [0, 0.71, 0.2, 1.01],
+    },
+  },
+};
 export default function bio() {
   return (
     <>
-      <div className="relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[#e4e4e7]">
-        <p
-          className="p-4 text-[1rem] font-[400] leading-[26px] text-neutral-500">
+      <div className="max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[#e4e4e7]">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
+          className="p-4 md:text-[1rem] text-[.9rem] font-[400] md:leading-[26px] leading-[22px] text-neutral-500"
+        >
           Full-stack developer with experience in crafting end-to-end web
           solutions. From responsive UIs to reliable backend systems, I enjoy
           building complete products. Passionate about clean code, performance,
           and great user experiences.
-        </p>
-
-        <div>
-            <h3 className="px-4 py-0 text-[#09090b] font-bold text-[22px] relative after:content-[''] after:w-full after:h-[1px] after:left-0 after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-full before:h-[1px] before:left-0 before:bottom-0 before:absolute before:bg-[#e4e4e7]">Teck Stack</h3>
-        
-        
+        </motion.p>
+      </div>
+      <div className="relative before:z-10 after:content-[''] after:w-full after:h-[1px] after:left-0 after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-full before:h-[1px] before:left-0 before:bottom-0 before:absolute before:bg-[#e4e4e7]">
+        <div className="pattern-bg max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[#e4e4e7]">
+          <motion.h3
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: "easeOut", delay: 0.3 }}
+            className="bg-white w-25 md:leading-9 leading-8 px-4 py-0 text-[#09090b] relative font-medium md:text-[27px] text-[22px] after:content-[''] after:w-[1px] after:h-full after:right-0 after:top-0 after:absolute after:bg-[#e4e4e7]"
+          >
+            Stack
+          </motion.h3>
+        </div>
+        <div className="relative after:content-[''] after:w-full after:h-[1px] after:left-0 after:top-0 after:absolute after:bg-[#e4e4e7]">
+          <div className="bg-gray-100/40 max-width flex gap-4 p-4 relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[#e4e4e7] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[#e4e4e7]">
+            <motion.div
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="cursor-pointer flex gap-4 flex-wrap items-center"
+            >
+              {Object.entries(tech).map(([id, src]) => (
+                <motion.img key={id} src={src}  variants={item}
+          className="w-7 opacity-80 hover:opacity-100 transition"/>  
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
     </>
