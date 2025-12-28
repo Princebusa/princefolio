@@ -16,6 +16,7 @@ body {
     --dot: #000;
     --shad-bg:  linear-gradient(356deg, rgba(255, 255, 255, 1) 49%, rgba(255, 255, 255, .8) 89%);
     --shad-bg2: linear-gradient(10deg, rgba(255, 255, 255, 1) 59%, rgba(255, 255, 255, .7) 89%);
+    --plus: #171717;
   
 }
 .dark {
@@ -26,6 +27,7 @@ body {
   --dot: #fff;
   --shad-bg:  linear-gradient(356deg, #09090b 49%, #09090bc4 89%);
   --shad-bg2: linear-gradient(10deg, #09090b 59%, #09090bc4 89%);
+  --plus: #e5e5e5;
 }
 
 
@@ -40,7 +42,7 @@ h3,
 h4,
 h5 {
 
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Saira", sans-serif;
 }
 
 p,
@@ -84,7 +86,13 @@ a, li {
   margin: 0 auto;
 
 }
-
+.react-activity-calendar text {
+  fill: #737373; 
+  font-family: "Hanken Grotesk", sans-serif;
+}
+.shine{
+  background: radial-gradient(35% 80% at 25% 0%,#e6e6e61a,transparent);
+}
 @media (max-width:767px) {
   .max-width {
     margin: 0 8px;

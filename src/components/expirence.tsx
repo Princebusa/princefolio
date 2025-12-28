@@ -21,23 +21,23 @@ const Expirence = () => {
 
       <div className="max-width p-4 relative relative before:z-10 after:content-[''] after:w-[1px] after:h-full after:left-0 after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-0 before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
         <div>
-          <div className="flex justify-between">
+          <div className="md:flex justify-between">
             <div className="flex gap-3 items-center">
-              <img className="w-[42px] h-[42px] rounded" src={dechub} alt="" />
+              <img className="w-[42px] h-[42px] rounded-[2px]" src={dechub} alt="" />
               <div className="">
-                <p className="font-semibold text-[20px]">Dechub</p>
-                <p className="text-neutral-400 text-[16px] font-[300]">
+                <p className="font-semibold text-[var(--forground)] text-[20px]">Dechub</p>
+                <p className="text-neutral-400 md:text-[16px] text-[14px] font-[400]">
                   Full Stack Developer
                 </p>
               </div>
             </div>
-            <div className="text-end text-neutral-400 font-[400]">
+            <div className="max-md:mt-1 md:text-end text-neutral-400 font-[400] max-md:text-[15px]">
               <p>May-2025 - Present</p>
               <p>Bangalore, India (Remote)</p>
             </div>
           </div>
           <div className="mt-2">
-            <ul className="marker:text-neutral-400 marker:text-[12px] list-disc text-neutral-500 text-[15px] flex flex-col gap-[4px] pl-14">
+            <ul className="marker:text-neutral-400 marker:text-[12px] list-disc text-neutral-500 text-[15px] flex flex-col gap-[4px] pl-4">
               <li>
                 Developing and maintaining scalable full-stack applications
                 using React, Next.js, Node.js, and modern APIs
@@ -58,23 +58,23 @@ const Expirence = () => {
           </div>
         </div>
         <div className="mt-5">
-          <div className="flex justify-between">
+          <div className="md:flex justify-between">
             <div className="flex gap-3 items-center">
-              <img className="w-[42px] h-[42px] rounded" src={dechub} alt="" />
+              <img className="w-[42px] h-[42px] rounded-[2px]" src={dechub} alt="" />
               <div className="">
-                <p className="font-semibold text-[20px]">Dechub</p>
-                <p className="text-neutral-400 text-[16px] font-[300]">
+                <p className="font-semibold text-[var(--forground)] text-[20px]">Dechub</p>
+                <p className="text-neutral-400 md:text-[16px] text-[14px] font-[400]">
                   Full Stack Developer (Intern)
                 </p>
               </div>
             </div>
-            <div className="text-end text-neutral-400 font-[400]">
+            <div className="max-md:mt-1 md:text-end text-neutral-400 font-[400] max-md:text-[15px]">
               <p>Jan-2025 - May-2025</p>
               <p>Bangalore, India (Remote)</p>
             </div>
           </div>
           <div className="mt-2">
-            <ul className="marker:text-neutral-400 marker:text-[12px] list-disc text-neutral-500 text-[15px] flex flex-col gap-[4px] pl-14">
+            <ul className="marker:text-neutral-400 marker:text-[12px] list-disc text-neutral-500 text-[15px] flex flex-col gap-[4px] pl-4">
               <li>
                 Assisted in building production-ready features using React, JavaScript, and REST APIs
               </li>

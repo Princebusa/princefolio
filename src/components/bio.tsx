@@ -2,6 +2,7 @@ import ts from "../assets/tech/typescript.svg";
 import js from "../assets/tech/js.svg";
 import node from "../assets/tech/nodejs.svg";
 import next from "../assets/tech/nextjs2-light.svg";
+import nextLight from '../assets/tech/nextjs2-dark.svg'
 import React from "../assets/tech/react.svg";
 import bun from "../assets/tech/bun.svg";
 import tailwind from "../assets/tech/tailwindcss.svg";
@@ -12,20 +13,21 @@ import shdcn from "../assets/tech/shadcn-ui-light.svg";
 import tanstack from "../assets/tech/tanstack-light.svg";
 import { motion } from "motion/react";
 
-const tech = {
-  ts,
-  js,
-  node,
-  sql,
-  next,
-  bun,
-  React,
-  tailwind,
-  mongo,
-  git,
-  shdcn,
-  tanstack,
-};
+const tech = [
+  { img: ts, class: "hidden [html.light_&]:block" },
+  { img: js, class: "hidden [html.light_&]:block" },
+  { img: node, class: "hidden [html.light_&]:block" },
+  { img: sql, class: "hidden [html.light_&]:block" },
+  { img: next, class: "hidden [html.light_&]:block" },
+  { img: nextLight, class: "hidden [html.dark_&]:block"},
+  { img: bun, class: "hidden [html.light_&]:block" },
+  { img: React, class: "hidden [html.light_&]:block" },
+  { img: tailwind, class: "hidden [html.light_&]:block" },
+  { img: mongo, class: "hidden [html.light_&]:block" },
+  { img: git, class: "hidden [html.light_&]:block" },
+  { img: shdcn, class: "hidden [html.light_&]:block" },
+  { img: tanstack, class: "hidden [html.light_&]:block" },
+];
 
 const container = {
   hidden: {},
@@ -56,6 +58,7 @@ const item = {
 export default function bio() {
   return (
     <>
+    { next}
       <div className="max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -88,8 +91,9 @@ export default function bio() {
               animate="show"
               className="cursor-pointer flex gap-4 flex-wrap items-center"
             >
-              {Object.entries(tech).map(([id, src]) => (
-                <motion.img key={id} src={src}  variants={item}
+              {tech.map((itm, id) => (
+                //@ts-igoner
+                <motion.img key={id} src={itm.img}  variants={item} 
           className="w-7 opacity-80 hover:opacity-100 transition"/>  
               ))}
             </motion.div>
