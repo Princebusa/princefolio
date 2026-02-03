@@ -12,7 +12,7 @@ import sql from "../assets/tech/mysql.svg";
 import git from "../assets/tech/git.svg";
 import shdcn from "../assets/tech/shadcn-ui-light.svg";
 import tanstack from "../assets/tech/tanstack-light.svg";
-
+import {motion} from 'motion/react'
 
 
 
@@ -28,7 +28,11 @@ const tech = {
 };
 export const Projects = () => {
   return (
-    <div className="dark:bg-[#171717] overflow-hidden">
+    <motion.div
+    initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
+    className="dark:bg-[#171717] overflow-hidden">
       <div>
         <img src={th} alt="" />
       </div>
@@ -50,7 +54,7 @@ export const Projects = () => {
                        </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -22,7 +22,10 @@ export default function Project() {
 
       <div className="max-width grid md:grid-cols-2 p-4 gap-4 relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
         <Projects />
+         <Projects />
       </div>
     </div>
+
+    
   );
 }
