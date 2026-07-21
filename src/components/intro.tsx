@@ -1,43 +1,95 @@
 import prince from "../assets/prince.jpeg";
+import heroBg from "../assets/hero.png";
 import { motion } from "motion/react";
-
-
+import { ArrowRight } from "lucide-react";
 
 export default function Intro() {
   return (
-    <div className="dots-bg max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
-      <div className="[background:var(--shad-bg2)] p-2 items-end flex gap-4 ">
-      <div className="relative">
-        <motion.img
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="rounded-full w-[120px] h-[120px] border-[4px] border-transparent shadow-[0_0_0_1px_var(--edge-line)] dark:shadow-[0_0_0_1px_#202029] "
-          src={prince}
+    <section className="grain relative overflow-hidden pb-10 pt-28 md:pb-16 md:pt-36">
+      {/* Full-bleed hero image with bottom fade */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0"
+      >
+        <img
+          src={heroBg}
           alt=""
+          className="h-full w-full object-cover object-center"
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, black 0%, black 45%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 0%, black 45%, transparent 100%)",
+          }}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut", delay: .1}}
-        className="bottom-1 right-1 z-2 absolute bg-white border border-neutral-300 p-[7px] shadow-[0px_0px_10px_0px_#00000040] rounded-full">
-          <div className="bg-[#00c950] h-[8px] w-[8px] rounded-full"></div>
-        </motion.div>
+        {/* Soft cream wash so text stays readable */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(255,255,235,0.35)_0%,rgba(255,255,235,0.55)_40%,var(--lumen)_100%)]" />
       </div>
-      <div>
-        <motion.h2
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut"}}
-          className="max-md:flex flex-col font-semibold md:text-[30px] text-[25px] text-[#09090b] dark:text-[#e5e5e5] tracking-[-.4px]"
-        >
-          Prince Busa{" "}
-          <span className="tracking-[.0px] md:font-[500] font-[400] text-gray-500 md:text-[21px] text-[17px] opacity-[.5]">
-            <span className="max-md:hidden">-</span> A Full Stack Developer
-          </span>
-        </motion.h2>
+
+      <div className="page-shell relative z-10">
+        <div className="mx-auto max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="relative">
+              <img
+                src={prince}
+                alt="Prince Busa"
+                className="h-[88px] w-[88px] rounded-full border-2 border-[var(--vast)] object-cover md:h-[104px] md:w-[104px]"
+              />
+              <span className="absolute bottom-1 right-1 flex h-6 w-6 items-center justify-center rounded-full border-2 border-[var(--vast)] bg-[var(--lumen)]">
+                <span className="h-2.5 w-2.5 rounded-full bg-[var(--glow)]" />
+              </span>
+            </div>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
+            className="display-title text-[56px] text-[var(--vast)] md:text-[88px] lg:text-[104px]"
+          >
+            <span className="opacity-50 " style={{fontFamily: "var(--font-display)"}}>Hi! I&apos;m</span> Prince Busa
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
+            className="mx-auto mt-5 max-w-xl text-[18px] leading-[1.45] text-[var(--fog)] md:text-[20px]"
+          >
+            Full-stack developer who turns ideas into polished products —
+            from responsive UIs to reliable backends.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-3"
+          >
+            <a href="#projects" className="btn-dawn">
+              See my work
+              <ArrowRight size={16} />
+            </a>
+            <a href="#contact" className="btn-ghost">
+              Email me
+            </a>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.35 }}
+            className="mt-6 text-[14px] font-medium text-[var(--fog)]"
+          >
+            Available for freelance & full-time roles
+          </motion.p>
+        </div>
       </div>
-      </div>
-    </div>
+    </section>
   );
 }

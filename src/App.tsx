@@ -1,9 +1,10 @@
 import Home from "./pages/home";
 import Header from "./components/header";
-export default function app() {
+
+export default function App() {
   return (
     <>
-<Header/>
+      <Header />
       <Home />
     </>
   );

@@ -1,35 +1,51 @@
-import { ArrowRight  } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import footerBg from "../assets/footer.png";
 
-const FooterCta = () => {
-    return (
-        <>
-        <div className="relative h-10   dots-bg ">
-        <div className="w-full h-full [background:var(--shad-bg)]"></div>
-      </div>
-      <div className="relative  before:content-[''] before:w-full before:h-[1px] before:left-0 before:top-0 before:absolute before:bg-[var(--edge-line)]">
-        <div className="p-4 max-width relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
-          <div className="relative after:content-[''] after:w-[1px] after:h-[100%] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-[1px] before:h-full before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
-            <div className="shine p-7 relative after:content-[''] after:w-full after:h-[1px] after:left-[0] after:top-0 after:absolute after:bg-[var(--edge-line)] before:content-[''] before:w-full before:h-[1px] before:right-[0] before:bottom-0 before:absolute before:bg-[var(--edge-line)]">
-           
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--plus)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-plus absolute top-[-11.5px] left-[-11.5px] z-1 size-6" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--plus)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-plus absolute top-[-11.5px] right-[-11.5px] z-1 size-6" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--plus)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-plus absolute bottom-[-11.5px] left-[-11.5px] z-1 size-6" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
-               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--plus)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-plus absolute bottom-[-11.5px] right-[-11.5px] z-1 size-6" aria-hidden="true"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+export default function FooterCta() {
+  return (
+    <section id="contact" className="pb-10 md:pb-16">
+      <div className="page-shell">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.45 }}
+          className="chamber relative overflow-hidden bg-[var(--dawn)] px-6 py-14 text-center md:px-12 md:py-20"
+        >
+          <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+            <img
+              src={footerBg}
+              alt=""
+              className="h-full w-full object-cover object-center"
+             
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(207,232,224,0.35)_0%,rgba(207,232,224,0.6)_45%,#ffffeb_100%)]" />
+          </div>
 
-               <h2 className='m-0 text-center font-semibold text-[30px] text-[var(--forground)]'>Let's work together</h2>
-               <p className='mt-2 text-neutral-500 font-[400] text-center'>Have a project in mind? Let's create something amazing.</p>
-               <div className='mt-4 text-center flex gap-3 justify-center'>
-                <a href="/" className='py-[7px] px-[12px] text-neutral-800 dark:text-neutral-200 text-[14px] leading-normal border border-[var(--edge-line)] hover:bg-gray-100 dark:bg-[#ffffff26]/30'>Email Me</a>
-                <a href="/" className='flex justify-center items-center leading-normal text-[14px] gap-[5px] py-[7px] px-[12px] border border-[var(--edge-line)] text-[#e5e5e5] dark:text-[#171717] bg-[#171717] dark:bg-[#e5e5e5] '>Book a Call
-                <ArrowRight className='w-4 h-4'/>
-                </a>
-               </div>
+          <div className="relative z-10 flex flex-col items-center justify-center">
+            <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--fathom)]">
+              Let&apos;s talk
+            </p>
+            <h2 className="display-title mx-auto max-w-2xl text-[42px] text-[var(--vast)] md:text-[64px]">
+              Let&apos;s work{" "}
+              <span className="italic-accent">together</span>
+            </h2>
+            <p className="mx-auto mt-4 max-w-md text-[17px] leading-[1.45] text-[var(--charcoal)] md:text-[18px]">
+              Have a project in mind? Let&apos;s create something amazing.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              <a href="mailto:hello@example.com" className="btn-ghost bg-[var(--lumen)]">
+                Email me
+              </a>
+              <a href="#contact" className="btn-fathom">
+                Book a call
+                <ArrowRight size={16} />
+              </a>
             </div>
           </div>
-        </div>
-        </div>
-        </>
-    );
+        </motion.div>
+      </div>
+    </section>
+  );
 }
-
-export default FooterCta;

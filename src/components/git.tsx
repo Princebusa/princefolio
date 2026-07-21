@@ -1,7 +1,7 @@
 import { GitHubCalendar } from 'react-github-calendar';
 import { useEffect, useState } from 'react';
 const Git = () => {
-    const [scheme, setScheme] = useState("light");
+    const [scheme, setScheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const updateScheme = () => {

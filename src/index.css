@@ -1,100 +1,170 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Wispr Flow palette */
+  --lumen: #ffffeb;
+  --lumen-dark: #e4e4d0;
+  --vast: #1a1a1a;
+  --charcoal: #222222;
+  --fog: #8a8a80;
+  --dawn: #8ECA3C;
+  --fathom: #034f46;
+  --glow: #ffa946;
+  --white: #ffffff;
+  --border: #1a1a1a4d;
+  --border-strong: #1a1a1a;
+
+  --background: var(--lumen);
+  --foreground: var(--vast);
+  --muted: var(--fog);
+
+  --font-display: "EB Garamond", serif;
+  --font-body: "Figtree", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-:root {
-  --edge-line: #e4e4e7;
-  --forground: #000000;
-  --background: #ffffff;
-  --pattern-foreground: color-mix(in oklab, var(--edge-line) 56%, transparent);
-    --dot: #000;
-    --shad-bg:  linear-gradient(356deg, rgba(255, 255, 255, 1) 49%, rgba(255, 255, 255, .8) 89%);
-    --shad-bg2: linear-gradient(10deg, rgba(255, 255, 255, 1) 59%, rgba(255, 255, 255, .7) 89%);
-    --plus: #171717;
-  
-}
-.dark {
-  --edge-line: #202024;
-  --forground: #ffffff;
-  --background: #09090b;
-  --pattern-foreground: color-mix(in oklab, var(--edge-line) 56%, transparent);
-  --dot: #fff;
-  --shad-bg:  linear-gradient(356deg, #09090b 49%, #09090bc4 89%);
-  --shad-bg2: linear-gradient(10deg, #09090b 59%, #09090bc4 89%);
-  --plus: #e5e5e5;
-}
-
-
-
-
-/* p, a, span, li{
-  font-family: "Questrial", sans-serif;
-} */
 h1,
 h2,
 h3,
 h4,
 h5 {
-
-  font-family: "Saira", sans-serif;
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin: 0;
 }
 
 p,
 span,
-a, li {
-  font-family: "Hanken Grotesk", sans-serif;
+a,
+li,
+button {
+  font-family: var(--font-body);
 }
 
-
-.pattern-bg {
-  background-image: repeating-linear-gradient(315deg,
-      var(--pattern-foreground) 0,
-      var(--pattern-foreground) 1px,
-      transparent 1px,
-      transparent 50%);
-  background-size: 10px 10px;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.dots-bg {
-  background-image: radial-gradient(circle,
-      var(--dot) 1px,
-      transparent 1px);
-  background-position: 10px;
-  background-size: 10px 10px;
-}
-
-.gg {
-  background: linear-gradient(10deg, rgba(255, 255, 255, 1) 59%, rgba(255, 255, 255, .7) 89%);
-}
-
-.gg-90 {
-  background: linear-gradient(356deg, rgba(255, 255, 255, 1) 49%, rgba(255, 255, 255, .8) 89%);
-}
-
-@theme inline {
-  --color-backgrond: var(--backgroud)
-}
-
-.max-width {
-  max-width: 785px;
+.page-shell {
+  max-width: 1120px;
   margin: 0 auto;
+  padding: 0 24px;
+}
 
-}
-.react-activity-calendar text {
-  fill: #737373; 
-  font-family: "Hanken Grotesk", sans-serif;
-}
-.shine{
-  background: radial-gradient(35% 80% at 25% 0%,#e6e6e61a,transparent);
-}
-@media (max-width:767px) {
-  .max-width {
-    margin: 0 8px;
+@media (max-width: 767px) {
+  .page-shell {
+    padding: 0 16px;
   }
+}
+
+/* Wispr-style primary CTA */
+.btn-dawn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--dawn);
+  color: var(--vast);
+  border: 2px solid var(--vast);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 20px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-dawn:hover {
+  background: #b9ddd3;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--vast);
+  border: 2px solid var(--vast);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 20px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: var(--lumen-dark);
+  transform: translateY(-1px);
+}
+
+.btn-fathom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--fathom);
+  color: var(--lumen);
+  border: 2px solid var(--fathom);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 20px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-fathom:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Soft paper grain */
+.grain {
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(207, 232, 224, 0.55), transparent 42%),
+    radial-gradient(circle at 85% 20%, rgba(3, 79, 70, 0.08), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(255, 169, 70, 0.12), transparent 45%);
+}
+
+.chamber {
+  border: 2px solid var(--vast);
+  border-radius: 48px;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .chamber {
+    border-radius: 28px;
+  }
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.italic-accent {
+  font-style: italic;
 }

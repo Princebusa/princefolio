@@ -1,4 +1,3 @@
-import React from "react";
 import th from "../assets/notesbuddy.webp";
 import ts from "../assets/tech/typescript.svg";
 import js from "../assets/tech/js.svg";
@@ -6,56 +5,56 @@ import node from "../assets/tech/nodejs.svg";
 import next from "../assets/tech/nextjs2-light.svg";
 import Reacts from "../assets/tech/react.svg";
 import bun from "../assets/tech/bun.svg";
-import tailwind from "../assets/tech/tailwindcss.svg";
-import mongo from "../assets/tech/mongodb.svg";
-import sql from "../assets/tech/mysql.svg";
-import git from "../assets/tech/git.svg";
-import shdcn from "../assets/tech/shadcn-ui-light.svg";
-import tanstack from "../assets/tech/tanstack-light.svg";
-import {motion} from 'motion/react'
+import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 
+const tech = { ts, js, node, next, Reacts, bun };
 
-
-const tech = {
-  ts,
-  js,
-  node,
-  sql,
-  next,
-  bun,
-  Reacts,
-
-};
-export const Projects = () => {
+export default function Projects() {
   return (
-    <motion.div
-    initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
-    className="dark:bg-[#171717] overflow-hidden">
-      <div>
-        <img src={th} alt="" />
+    <motion.article
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      className="group overflow-hidden rounded-[32px] border-2 border-[var(--vast)] bg-[var(--white)]"
+    >
+      <div className="overflow-hidden border-b-2 border-[var(--vast)] bg-[var(--lumen-dark)]">
+        <img
+          src={th}
+          alt="Syncify project"
+          className="aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+        />
       </div>
-      <div className="border-t-0 border border-[var(--edge-line)]  pt-7 p-6 flex flex-col gap-4">
-        <div>
-          <h2 className="font-medium text-lg dark:text-white">Syncify</h2>
+      <div className="flex flex-col gap-4 p-6 md:p-7">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="display-title text-[28px] text-[var(--vast)] md:text-[32px]">
+            Syncify
+          </h3>
+          <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-[var(--vast)] bg-[var(--dawn)] transition-transform group-hover:rotate-12">
+            <ArrowUpRight size={16} />
+          </span>
         </div>
-        <p className="font-regular text-[15px] dark:text-[#909092] tracking-[.2px] text-neutral-500/80">
+        <p className="text-[15px] leading-[1.45] text-[var(--fog)] md:text-[16px]">
           A comprehensive study platform with notes, flashcards, quizzes, AI
-          chatbot, and interactive learning tools
+          chatbot, and interactive learning tools.
         </p>
         <div>
-          <h4 className="font-medium text-[14px] text-neutral-400 tracking-[.3px]">Technologies</h4>
-                       <div className="flex gap-2 mt-[7px]">
-                         {Object.entries(tech).map(([id, src]) => (
-                <img key={id} src={src} 
-          className="w-6"/>  
-              ))}
-                       </div>
+          <p className="mb-2.5 text-[12px] font-semibold uppercase tracking-[0.06em] text-[var(--fog)]">
+            Technologies
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {Object.entries(tech).map(([id, src]) => (
+              <span
+                key={id}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--lumen)]"
+              >
+                <img src={src} alt="" className="h-5 w-5" />
+              </span>
+            ))}
+          </div>
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
-};
-
-export default Projects;
+}
