@@ -48,43 +48,33 @@ const item = {
 
 export default function Bio() {
   return (
-    <section id="stack" className="pb-10 md:pb-16">
+    <section id="stack" className="mb-8 mt-[-48px] rounded-b-[28px] bg-[#034f46] px-4 pb-10 pt-14 sm:mb-10 sm:mt-[-64px] sm:rounded-b-[40px] sm:pb-12 sm:pt-16 md:mb-16 md:mt-[-80px] md:rounded-b-[60px] md:pb-16 md:pt-20">
       <div className="page-shell">
-        <div className="chamber bg-[var(--lumen)] px-6 py-12 text-[var(--vast)] md:px-12 md:py-16">
+        <div className="text-[var(--vast)] md:px-12 md:py-16">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-4 text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--fathom)]">
-              About
-            </p>
-            <h2 className="display-title text-[36px] md:text-[52px]">
-              I craft end-to-end web{" "}
-              <span className="italic-accent">solutions</span>
+            <h2 className="display-title text-[30px] text-[var(--lumen)] sm:text-[36px] md:text-[52px]">
+              My{" "}
+              <span className="italic-accent">Weapons</span>
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-[17px] leading-[1.5] text-[var(--fog)] md:text-[18px]">
-              From responsive UIs to reliable backend systems, I enjoy building
-              complete products. Passionate about clean code, performance, and
-              great user experiences.
-            </p>
+           
           </div>
 
-          <div className="mx-auto mt-10 max-w-3xl">
-            <p className="mb-5 text-center text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--fog)]">
-              Stack
-            </p>
+          <div className="mx-auto mt-8 max-w-3xl sm:mt-10">
             <motion.div
               variants={container}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
-              className="flex flex-wrap items-center justify-center gap-3"
+              className="flex flex-wrap items-center justify-center gap-2 sm:gap-3"
             >
               {tech.map((itm) => (
                 <motion.div
                   key={itm.name}
                   variants={item}
-                  className="flex items-center gap-2 rounded-full border-2 border-[var(--vast)] bg-[var(--white)] px-3.5 py-2"
+                  className="flex items-center gap-2 rounded-full border-2 border-[var(--vast)] bg-[var(--white)] px-3 py-1.5 sm:px-3.5 sm:py-2"
                 >
-                  <img src={itm.img} alt="" className="h-5 w-5" />
-                  <span className="text-[13px] font-semibold text-[var(--vast)]">
+                  <img src={itm.img} alt="" className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="text-[12px] font-semibold text-[var(--vast)] sm:text-[13px]">
                     {itm.name}
                   </span>
                 </motion.div>

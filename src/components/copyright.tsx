@@ -1,32 +1,34 @@
+import footerBg from "../assets/footer.png";
+
 export default function Copyright() {
   return (
-    <footer className="border-t-2 border-[var(--border)] pb-10 pt-8">
-      <div className="page-shell">
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-          <a
-            href="/"
-            className="text-[24px] tracking-[-0.03em] text-[var(--vast)]"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Prince
-          </a>
-          <div className="flex flex-wrap items-center justify-center gap-5 text-[14px] font-medium text-[var(--fog)]">
-            <a href="#projects" className="hover:text-[var(--vast)]">
-              Work
-            </a>
-            <a href="#stack" className="hover:text-[var(--vast)]">
-              Stack
-            </a>
-            <a href="#experience" className="hover:text-[var(--vast)]">
-              Experience
-            </a>
-            <a href="#contact" className="hover:text-[var(--vast)]">
-              Contact
-            </a>
+    <footer>
+      <div className="relative min-h-[320px] sm:min-h-[420px] md:min-h-[600px]">
+        <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+          <img
+            src={footerBg}
+            alt=""
+            className="h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/70" />
+        </div>
+
+        <div className="max-w-[1200px] mx-auto relative flex min-h-[320px] w-full flex-col items-start md:justify-between justify-end  gap-8 px-4 py-12 sm:min-h-[420px] sm:gap-10 sm:py-16 md:min-h-[600px] md:flex-row md:items-end md:gap-4 md:pb-20">
+          <div className="max-w-xl">
+            <p
+              className="pb-3 text-[32px] font-semibold italic leading-[1.05] tracking-[-0.03em] text-white sm:text-[40px] md:text-[50px]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Let&apos;s build the future.
+            </p>
+            <p className="text-[14px] italic leading-[1.5] text-white/70 sm:text-[15px]">
+              My inbox is always open. Reach out and let&apos;s start crafting.
+            </p>
           </div>
-          <p className="text-[14px] text-[var(--fog)]">
+
+          <p className="text-[13px] text-white/80 sm:text-[15px] pb-4">
             © 2026 · Designed & developed by{" "}
-            <span className="font-semibold text-[var(--vast)]">Prince</span>
+            <span className="font-semibold text-white">Prince</span>
           </p>
         </div>
       </div>

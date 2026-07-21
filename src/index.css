@@ -7,13 +7,13 @@
   --vast: #1a1a1a;
   --charcoal: #222222;
   --fog: #8a8a80;
-  --dawn: #8ECA3C;
+  --dawn: #034f46;
   --fathom: #034f46;
   --glow: #ffa946;
   --white: #ffffff;
   --border: #1a1a1a4d;
   --border-strong: #1a1a1a;
-
+   
   --background: var(--lumen);
   --foreground: var(--vast);
   --muted: var(--fog);
@@ -28,11 +28,13 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
@@ -75,6 +77,23 @@ a {
   .page-shell {
     padding: 0 16px;
   }
+
+  .btn-dawn,
+  .btn-ghost,
+  .btn-fathom {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+.section-panel {
+  border-radius: 28px;
+}
+
+@media (min-width: 768px) {
+  .section-panel {
+    border-radius: 60px;
+  }
 }
 
 /* Wispr-style primary CTA */
@@ -84,9 +103,9 @@ a {
   justify-content: center;
   gap: 8px;
   background: var(--dawn);
-  color: var(--vast);
+  color: var(--lumen);
   border: 2px solid var(--vast);
-  border-radius: 12px;
+  border-radius: 9px; 
   font-weight: 600;
   font-size: 15px;
   padding: 12px 20px;
@@ -94,7 +113,7 @@ a {
 }
 
 .btn-dawn:hover {
-  background: #b9ddd3;
+  background: #034f46d6;
   transform: translateY(-1px);
 }
 
@@ -106,7 +125,7 @@ a {
   background: transparent;
   color: var(--vast);
   border: 2px solid var(--vast);
-  border-radius: 12px;
+  border-radius: 9px;
   font-weight: 600;
   font-size: 15px;
   padding: 12px 20px;
@@ -144,6 +163,31 @@ a {
     radial-gradient(circle at 20% 10%, rgba(207, 232, 224, 0.55), transparent 42%),
     radial-gradient(circle at 85% 20%, rgba(3, 79, 70, 0.08), transparent 40%),
     radial-gradient(circle at 50% 100%, rgba(255, 169, 70, 0.12), transparent 45%);
+}
+
+/* Film noise on solid panels */
+.noise {
+  position: relative;
+  isolation: isolate;
+}
+
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+.noise > * {
+  position: relative;
+  z-index: 1;
 }
 
 .chamber {

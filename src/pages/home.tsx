@@ -2,7 +2,8 @@ import Intro from "../components/intro";
 import Bio from "../components/bio";
 import Project from "../components/projects";
 import Exp from "../components/expirence";
-import FooterCta from "../components/footerCta";
+import Contributions from "../components/contributions";
+import Contact from "../components/contact";
 import Copyright from "../components/copyright";
 
 export default function Home() {
@@ -12,7 +13,8 @@ export default function Home() {
       <Project />
       <Bio />
       <Exp />
-      <FooterCta />
+      <Contributions />
+      <Contact />
       <Copyright />
     </main>
   );
