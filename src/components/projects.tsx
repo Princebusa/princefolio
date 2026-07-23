@@ -1,5 +1,6 @@
-import Projects from "./projectsCard";
+import ProjectCard from "./projectsCard";
 import { motion } from "motion/react";
+import { projects } from "../data/projects";
 
 export default function Project() {
   return (
@@ -22,8 +23,9 @@ export default function Project() {
           </div>
 
           <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
-            <Projects />
-            <Projects />
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
           </div>
         </div>
       </div>
