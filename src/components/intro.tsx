@@ -1,5 +1,5 @@
 import prince from "../assets/prince.jpeg";
-import heroBg from "../assets/hero.png";
+import heroBg from "../assets/hero.webp";
 import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 

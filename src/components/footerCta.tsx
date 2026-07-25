@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
-import footerBg from "../assets/footer.png";
+import footerBg from "../assets/footer.webp";
 
 export default function FooterCta() {
   return (

@@ -32,7 +32,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           {project.description}
         </p>
         <div>
-          <p className="text-[12px] font-semibold uppercase tracking-[0.06em] text-[var(--fog)]">
+          {/* <p className="text-[12px] font-semibold uppercase tracking-[0.06em] text-[var(--fog)]">
             Technologies
           </p>
           <div className="flex flex-wrap gap-0">
@@ -44,7 +44,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <img src={item.icon} alt="" className="h-5 w-5" />
               </span>
             ))}
-          </div>
+          </div> */}
           <div className="mt-3 flex gap-2 sm:items-center">
             {project.demoUrl && (
               <a

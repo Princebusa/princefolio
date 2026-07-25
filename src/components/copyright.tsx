@@ -1,4 +1,4 @@
-import footerBg from "../assets/footer.png";
+import footerBg from "../assets/footer.webp";
 
 export default function Copyright() {
   return (
