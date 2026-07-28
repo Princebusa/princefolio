@@ -1,6 +1,6 @@
-import TradeX from "../assets/tradex.webp";
-import sloth from "../assets/sloth.webp";
-import flow from "../assets/flow.webp";
+import TradeX from "../assets/tradex.jpeg";
+import sloth from "../assets/sloth.png";
+import flow from "../assets/syncflow.jpeg";
 import ts from "../assets/tech/typescript.svg";
 import js from "../assets/tech/js.svg";
 import node from "../assets/tech/nodejs.svg";
@@ -20,6 +20,7 @@ export type Project = {
   title: string;
   description: string;
   image: string;
+  gradient: string;
   demoUrl?: string;
   codeUrl?: string;
   tech: ProjectTech[];
@@ -33,6 +34,7 @@ export const projects: Project[] = [
     description:
       "A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools.",
     image: sloth,
+    gradient: "linear-gradient(135deg, #86efac 0%, #fef08a 100%)",
     demoUrl: "#",
     codeUrl: "https://github.com/Princebusa/Sloth-RAG-agent",
     tech: [
@@ -50,7 +52,8 @@ export const projects: Project[] = [
     description:
       "A trading dashboard with live charts, portfolio tracking, and a clean interface for market insights.",
     image: TradeX,
-    demoUrl: "#",
+    gradient: "linear-gradient(135deg, #f9a8d4 0%, #fbcfe8 55%, #fda4af 100%)",
+    demoUrl: "https://tradex.princebusa.com",
     codeUrl: "https://github.com/Princebusa/CEX",
     tech: [
       { id: "ts", icon: ts },
@@ -66,6 +69,7 @@ export const projects: Project[] = [
     description:
       "A focused productivity app that helps you ship work without the noise — simple, fast, and calm.",
     image: flow,
+    gradient: "linear-gradient(135deg, #99f6e4 0%, #a5b4fc 100%)",
     demoUrl: "#",
     codeUrl: "https://github.com/Princebusa/FlowSync",
     tech: [

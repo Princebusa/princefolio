@@ -21,47 +21,58 @@ const socialLinks = [
 ];
 
 export default function Sticky({ children }: { children: React.ReactNode }) {
-    const audioRef = useRef<HTMLAudioElement>(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-  
-    useEffect(() => {
-        const audio = audioRef.current;
-        if (!audio) return;
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-        audio.play();
-      
-        const handleFirstClick = () => {
-          if (!audioRef.current) return;
-          audioRef.current.muted = false;
-          window.removeEventListener("click", handleFirstClick);
-        };
-      
-        window.addEventListener("click", handleFirstClick);
-      
-        return () => {
-          window.removeEventListener("click", handleFirstClick);
-        };
-      }, []);
-  
-    const toggleAudio = () => {
-      const audio = audioRef.current;
-      if (!audio) return;
-      if (audio.paused) {
-        audio.play();
-        setIsPlaying(true);
-      } else {
-        audio.pause();
-        setIsPlaying(false);
-      }
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.play();
+
+    const handleFirstClick = () => {
+      if (!audioRef.current) return;
+      audioRef.current.muted = false;
+      window.removeEventListener("click", handleFirstClick);
     };
-  
+
+    window.addEventListener("click", handleFirstClick);
+
+    return () => {
+      window.removeEventListener("click", handleFirstClick);
+    };
+  }, []);
+
+  const toggleAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
 
   return (
     <div className="relative">
-       <audio ref={audioRef} src={sound} loop muted />
+      <audio ref={audioRef} src={sound} loop muted />
 
-      <div className="pointer-events-none fixed bottom-4 right-4 z-50 flex flex-col items-center gap-2 sm:bottom-6 sm:right-6 sm:gap-3">
-        <div className="flex flex-col gap-2 sm:gap-3">
+      {/* Bottom frosted blur strip */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-40 backdrop-blur-md"
+        style={{
+          maskImage:
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%)",
+        }}
+      />
+
+      <div className="pointer-events-none fixed bottom-5 right-4 z-50 flex flex-col items-center gap-2 sm:bottom-6 sm:right-6">
+        <div className="flex flex-col gap-2">
           {socialLinks.map(({ label, href, icon: Icon }) => (
             <a
               key={label}
@@ -69,9 +80,9 @@ export default function Sticky({ children }: { children: React.ReactNode }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="pointer-events-auto flex h-11 w-11 items-center justify-center rounded-full border-2 border-[var(--vast)] bg-[var(--lumen)] text-[var(--vast)] shadow-[4px_4px_0px_0px_#034f46] transition-transform hover:-translate-y-0.5 active:translate-y-0 sm:h-12 sm:w-12"
+              className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--white)]/70 text-[var(--vast)] shadow-sm backdrop-blur-md transition-colors hover:border-[var(--dawn)] hover:text-[var(--dawn)]"
             >
-              <Icon size={18} />
+              <Icon size={14} />
             </a>
           ))}
         </div>
@@ -80,9 +91,9 @@ export default function Sticky({ children }: { children: React.ReactNode }) {
           onClick={toggleAudio}
           aria-label={isPlaying ? "Pause background sound" : "Play background sound"}
           aria-pressed={isPlaying}
-          className="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full border-2 border-[var(--vast)] bg-[var(--lumen)] text-[var(--vast)] shadow-[4px_4px_0px_0px_#034f46] transition-transform hover:-translate-y-0.5 active:translate-y-0"
+          className="pointer-events-auto flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border)] bg-[var(--white)]/70 text-[var(--vast)] shadow-sm backdrop-blur-md transition-colors hover:border-[var(--dawn)] hover:text-[var(--dawn)]"
         >
-          {isPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
+          {isPlaying ? <Volume2 size={14} /> : <VolumeX size={14} />}
         </button>
       </div>
       {children}

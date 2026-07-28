@@ -8,7 +8,8 @@ const roles = [
     company: "Dechub",
     title: "Full Stack Developer",
     period: "May 2025 — Present",
-    location: "Bangalore, India (Remote)",
+    location: "Bangalore, India",
+    locationType: "Remote",
     points: [
       "Developing and maintaining scalable full-stack applications using React, Next.js, Node.js, and modern APIs",
       "Designing clean, responsive UIs with Tailwind CSS and smooth motion-based interactions",
@@ -20,7 +21,8 @@ const roles = [
     company: "Dechub",
     title: "Full Stack Developer (Intern)",
     period: "Jan 2025 — May 2025",
-    location: "Bangalore, India (Remote)",
+    location: "Bangalore, India",
+    locationType: "Remote",
     points: [
       "Assisted in building production-ready features using React, JavaScript, and REST APIs",
       "Implemented responsive layouts and UI components with Tailwind CSS",
@@ -31,110 +33,100 @@ const roles = [
 ];
 
 export default function Exp() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleRole = (index: number) => {
     setOpenIndex((current) => (current === index ? -1 : index));
   };
 
   return (
-    <section id="experience" className="pb-22 pt-20 md:pb-20 md:pt-20">
-      <div className="page-shell flex flex-col items-center justify-center">
-        <div className="mb-6 text-center sm:mb-8 md:mb-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            className="display-title text-[32px] text-[var(--vast)] sm:text-[40px] md:text-[56px]"
-          >
-            My <span className="italic-accent">Experience</span>
-          </motion.h2>
+    <section id="experience" className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-6 sm:p-8">
+      <div className="mb-6">
+        <h2 className="section-label">Experience</h2>
+      </div>
 
-          <p className="mx-auto mt-3 max-w-lg px-2 text-[15px] leading-[1.45] text-[var(--fog)] sm:mt-4 sm:text-[16px] md:text-[18px]">
-            My work experience and previous guild affiliations.
-          </p>
-        </div>
+      <div className="flex flex-col">
+        {roles.map((role, index) => {
+          const isOpen = openIndex === index;
 
-        <div className="w-full max-w-[900px] rounded-[18px] bg-[var(--lumen)] sm:rounded-[22px]">
-          {roles.map((role, index) => {
-            const isOpen = openIndex === index;
-
-            return (
-              <motion.div
-                key={`${role.title}-${role.period}`}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="mb-3 overflow-hidden rounded-[18px] border-2 border-[var(--border)] shadow-[4px_4px_0px_0px_#034f46]/10 last:mb-0 sm:mb-4 sm:rounded-[22px] sm:shadow-[8px_8px_0px_0px_#034f46]/10"
+          return (
+            <motion.div
+              key={`${role.title}-${role.period}`}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: index * 0.06 }}
+              className="border-t border-[var(--border)] first:border-t-0"
+            >
+              <button
+                type="button"
+                onClick={() => toggleRole(index)}
+                aria-expanded={isOpen}
+                className="flex w-full cursor-pointer flex-col gap-3 py-5 text-left transition-colors hover:bg-[var(--lumen-dark)]/60 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
               >
-                <button
-                  type="button"
-                  onClick={() => toggleRole(index)}
-                  aria-expanded={isOpen}
-                  className="flex w-full cursor-pointer flex-col gap-4 px-4 py-5 text-left transition-colors hover:bg-[var(--lumen-dark)]/35 sm:px-6 sm:py-6 md:flex-row md:items-center md:justify-between"
-                >
-                  <div className="flex min-w-0 items-center gap-3">
-                    <img
-                      src={dechub}
-                      alt={role.company}
-                      className="h-11 w-11 shrink-0 rounded-[10px] border-2 border-[var(--vast)] object-cover sm:h-12 sm:w-12 sm:rounded-[12px]"
-                    />
-                    <div className="min-w-0">
-                      <p className="text-[18px] font-semibold text-[var(--vast)] sm:text-[20px] md:text-[22px]">
-                        {role.company}
-                      </p>
-                      <p className="text-[14px] font-medium text-[var(--fog)] sm:text-[15px]">
-                        {role.title}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex w-full items-center justify-between gap-3 md:w-auto md:justify-end">
-                    <div className="min-w-0 md:text-right">
-                      <p className="text-[13px] font-semibold text-[var(--fathom)] sm:text-[14px]">
-                        {role.period}
-                      </p>
-                      <p className="truncate text-[13px] text-[var(--fog)] sm:text-[14px]">
-                        {role.location}
-                      </p>
-                    </div>
-                    <ChevronDown
-                      size={24}
-                      className={`shrink-0 text-[var(--dawn)] transition-transform duration-300 md:size-[30px] ${
-                        isOpen ? "rotate-180" : ""
-                      }`}
-                    />
-                  </div>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
+                <div className="flex min-w-0 items-start gap-3">
+                  <img
+                    src={dechub}
+                    alt={role.company}
+                    className="h-10 w-10 shrink-0 rounded-lg border border-[var(--border)] object-cover"
+                  />
+                  <div className="min-w-0">
+                    <p
+                      className="text-[15px] font-medium text-[var(--vast)]"
+                      style={{ fontFamily: "var(--font-body)" }}
                     >
-                      <ul className="flex flex-col gap-2.5 border-t-2 border-[var(--border)] p-4 sm:p-6 md:p-7">
-                        {role.points.map((point) => (
-                          <li
-                            key={point}
-                            className="relative pl-5 text-[14px] leading-[1.5] text-[var(--charcoal)] before:absolute before:left-0 before:top-[0.55em] before:h-1.5 before:w-1.5 before:rounded-full before:bg-[var(--glow)] sm:text-[15px] md:text-[16px]"
-                          >
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-        </div>
+                      {role.company}
+                    </p>
+                    <p className="mt-0.5 text-[13px] text-[var(--charcoal)]">
+                      {role.title}
+                    </p>
+                    <p className="mt-1 text-[12px] text-[var(--fog)]">
+                      {role.location} · {role.locationType}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-3 sm:justify-end">
+                  <p
+                    className="text-[12px] font-medium text-[var(--dawn)] sm:text-right"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
+                    {role.period}
+                  </p>
+                  <ChevronDown
+                    size={16}
+                    className={`shrink-0 text-[var(--fog)] transition-transform duration-300 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </div>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <ul className="flex flex-col gap-2.5 border-t border-[var(--border)] px-0 pb-5 pt-4 sm:pl-[52px]">
+                      {role.points.map((point) => (
+                        <li
+                          key={point}
+                          className="relative pl-4 text-[13px] leading-[1.55] text-[var(--charcoal)] before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[var(--glow)] sm:text-[14px]"
+                        >
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

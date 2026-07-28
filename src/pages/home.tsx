@@ -8,11 +8,11 @@ import Copyright from "../components/copyright";
 
 export default function Home() {
   return (
-    <main>
+    <main className="flex flex-1 flex-col gap-4 pb-4">
       <Intro />
+      <Exp />
       <Project />
       <Bio />
-      <Exp />
       <Contributions />
       <Contact />
       <Copyright />
