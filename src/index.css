@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* Neutral zinc / black / white + subtle teal accent */
   --lumen: #ffffff;

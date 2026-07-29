@@ -10,6 +10,9 @@ import sql from "../assets/tech/mysql.svg";
 import git from "../assets/tech/git.svg";
 import shdcn from "../assets/tech/shadcn-ui-light.svg";
 import tanstack from "../assets/tech/tanstack-light.svg";
+import docker from "../assets/tech/docker.svg";
+import kubernetes from "../assets/tech/kubernetes.svg";
+import redis from "../assets/tech/redis.svg";
 import { motion } from "motion/react";
 
 const categories = [
@@ -37,17 +40,22 @@ const categories = [
       { img: bun, name: "Bun" },
       { img: mongo, name: "MongoDB" },
       { img: sql, name: "MySQL" },
+      { img: redis, name: "Redis" },
     ],
   },
   {
     label: "04 · Tools",
-    items: [{ img: git, name: "Git" }],
+    items: [
+      { img: git, name: "Git" },
+      { img: docker, name: "Docker" },
+      { img: kubernetes, name: "Kubernetes" },
+    ],
   },
 ];
 
 export default function Bio() {
   return (
-    <section id="stack" className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-6 sm:p-8">
+    <section id="stack" className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-5 sm:p-8">
       <div className="mb-6">
         <h2 className="section-label">Stack</h2>
       </div>

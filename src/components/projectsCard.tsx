@@ -8,17 +8,11 @@ type ProjectCardProps = {
 
 
 
-function splitTitle(title: string) {
-  const [name, ...rest] = title.split(" - ");
-  return {
-    name: name.trim(),
-    tagline: rest.length ? rest.join(" - ").trim() : null,
-  };
-}
+
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   const isLive = Boolean(project.demoUrl && project.demoUrl !== "#");
-  const { name, tagline } = splitTitle(project.title);
+  const  name  = project.title;
   const primaryHref = isLive ? project.demoUrl : project.codeUrl;
 
   return (
@@ -37,7 +31,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         style={{ background: project.gradient }}
       >
         {/* Preview framed bottom-right, clipped by card overflow */}
-        <div className="absolute -bottom-7 -right-7 w-[100%] max-w-[320px] transition-transform duration-500 ease-out group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] sm:-bottom-8 sm:-right-8 sm:w-[100%]">
+        <div className="absolute -bottom-12 -right-5 w-[100%] max-w-[320px] transition-transform duration-500 ease-out group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] sm:-bottom-8 sm:-right-8 sm:w-[100%]">
           <div className="overflow-hidden rounded-xl border-7 border-white/35 bg-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.18)] backdrop-blur-[2px] ring-1 ring-inset ring-white/25">
             <img
               src={project.image}

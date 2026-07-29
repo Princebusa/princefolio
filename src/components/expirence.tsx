@@ -7,8 +7,8 @@ const roles = [
   {
     company: "Dechub",
     title: "Full Stack Developer",
-    period: "May 2025 — Present",
-    location: "Bangalore, India",
+    period: "May 25 - Present",
+    location: "Bangalore, IN",
     locationType: "Remote",
     points: [
       "Developing and maintaining scalable full-stack applications using React, Next.js, Node.js, and modern APIs",
@@ -20,8 +20,8 @@ const roles = [
   {
     company: "Dechub",
     title: "Full Stack Developer (Intern)",
-    period: "Jan 2025 — May 2025",
-    location: "Bangalore, India",
+    period: "Jan 25 - May 25",
+    location: "Bangalore, IN",
     locationType: "Remote",
     points: [
       "Assisted in building production-ready features using React, JavaScript, and REST APIs",
@@ -40,7 +40,10 @@ export default function Exp() {
   };
 
   return (
-    <section id="experience" className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-6 sm:p-8">
+    <section
+      id="experience"
+      className="overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--white)] p-5 sm:p-8"
+    >
       <div className="mb-6">
         <h2 className="section-label">Experience</h2>
       </div>
@@ -62,7 +65,7 @@ export default function Exp() {
                 type="button"
                 onClick={() => toggleRole(index)}
                 aria-expanded={isOpen}
-                className="flex w-full cursor-pointer flex-col gap-3 py-5 text-left transition-colors hover:bg-[var(--lumen-dark)]/60 sm:flex-row sm:items-start sm:justify-between sm:gap-6"
+                className="-mx-5 flex w-[calc(100%+2.5rem)] cursor-pointer flex-row items-start justify-between gap-3 px-5 py-5 text-left transition-colors hover:bg-[var(--lumen-dark)]/60 sm:-mx-8 sm:w-[calc(100%+4rem)] sm:gap-6 sm:px-8"
               >
                 <div className="flex min-w-0 items-start gap-3">
                   <img
@@ -77,18 +80,18 @@ export default function Exp() {
                     >
                       {role.company}
                     </p>
-                    <p className="mt-0.5 text-[13px] text-[var(--charcoal)]">
+                    <p className="mt-0.4 text-[13px] text-[var(--charcoal)]/60 font-medium">
                       {role.title}
                     </p>
-                    <p className="mt-1 text-[12px] text-[var(--fog)]">
-                      {role.location} · {role.locationType}
-                    </p>
+                   
                   </div>
                 </div>
 
-                <div className="flex items-center justify-between gap-3 sm:justify-end">
-                  <p
-                    className="text-[12px] font-medium text-[var(--dawn)] sm:text-right"
+                <div className="flex shrink-0 items-center justify-end gap-3">
+                 <div className="">
+                <div className="flex items-center justify-end gap-3 ">
+                <p
+                    className="whitespace-nowrap text-right text-[12px] font-medium text-[var(--dawn)]"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {role.period}
@@ -99,6 +102,17 @@ export default function Exp() {
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
+                </div>
+
+                  <div>
+                  <p className="mt-1 whitespace-nowrap text-right text-[13px] text-[var(--fog)]">
+                      {role.location}{" "} 
+                     
+                      {window.innerWidth > 768 && `· ${role.locationType}`}
+
+                    </p>
+                  </div>
+                 </div>
                 </div>
               </button>
 
@@ -111,11 +125,11 @@ export default function Exp() {
                     transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <ul className="flex flex-col gap-2.5 border-t border-[var(--border)] px-0 pb-5 pt-4 sm:pl-[52px]">
+                    <ul className="flex flex-col gap-2 border-t border-[var(--border)] px-0 pb-5 pt-4 sm:pl-0">
                       {role.points.map((point) => (
                         <li
                           key={point}
-                          className="relative pl-4 text-[13px] leading-[1.55] text-[var(--charcoal)] before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[var(--glow)] sm:text-[14px]"
+                          className="relative pl-4 text-[13px] leading-[1.55] text-[var(--charcoal)]/70 before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[var(--glow)] sm:text-[14px]"
                         >
                           {point}
                         </li>

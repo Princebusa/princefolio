@@ -3,7 +3,7 @@ import { projects } from "../data/projects";
 
 export default function Project() {
   return (
-    <section id="projects" className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-6 sm:p-8">
+    <section id="projects" className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-5 sm:p-8">
       <div className="mb-6">
           <h2 className="section-label">Projects</h2>
         </div>

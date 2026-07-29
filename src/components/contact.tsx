@@ -10,8 +10,8 @@ import {
 const contacts = [
   {
     label: "Email",
-    value: "princebusa@gmail.com",
-    href: "mailto:princebusa@gmail.com",
+    value: "busaprince13@gmail.com",
+    href: "mailto:busaprince13@gmail.com",
     icon: Mail,
   },
   {
@@ -38,7 +38,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-6 sm:p-8"
+      className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-5 sm:p-8"
     >
       <div className="mb-6">
         <h2 className="section-label">Contact</h2>

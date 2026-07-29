@@ -21,7 +21,7 @@ export default function Header() {
             <a
               key={item.name}
               href={item.link}
-              className="!text-[var(--fog)]/95 transition-colors hover:text-[var(--vast)]"
+              className="!text-[var(--fog)]/95 transition-colors hover:text-[var(--vast)] text-[13px] font-medium"
             >
               {item.name}
             </a>

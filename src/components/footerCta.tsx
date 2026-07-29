@@ -35,7 +35,7 @@ export default function FooterCta() {
               Have a project in mind? Let&apos;s create something amazing.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <a href="mailto:hello@example.com" className="btn-ghost bg-[var(--lumen)]">
+              <a href="mailto:busaprince13@google.com" className="btn-ghost bg-[var(--lumen)]">
                 Email me
               </a>
               <a href="#contact" className="btn-fathom">

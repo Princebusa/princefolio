@@ -1,6 +1,6 @@
 export default function Copyright() {
   return (
-    <footer className="rounded-2xl border border-[var(--border)] bg-[var(--white)] px-6 py-6 sm:px-8">
+    <footer className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-5 sm:px-8 sm:py-6">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p
           className="text-[22px] tracking-wide text-[var(--vast)] sm:text-[24px]"
