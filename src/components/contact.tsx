@@ -29,7 +29,7 @@ const contacts = [
   {
     label: "X",
     value: "@Prince_busa13",
-    href: "https://x.com/Prince_busa13",
+    href: "https://x.com/princebusa_",
     icon: Twitter,
   },
 ];

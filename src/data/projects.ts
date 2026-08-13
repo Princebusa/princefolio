@@ -69,7 +69,7 @@ export const projects: Project[] = [
       "A focused productivity app that helps you ship work without the noise — simple, fast, and calm.",
     image: flow,
     gradient: "linear-gradient(135deg, #99f6e4 0%, #a5b4fc 100%)",
-    demoUrl: "#",
+    demoUrl: "https://flowsync.princebusa.com",
     codeUrl: "https://github.com/Princebusa/FlowSync",
     highlights: [
       "Node-Based Editor UI",

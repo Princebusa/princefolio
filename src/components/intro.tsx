@@ -15,7 +15,7 @@ const links = [
   { label: "Email", href: "mailto:busaprince13@gmail.com", icon: Mail },
   { label: "GitHub", href: "https://github.com/princebusa", icon: Github },
   { label: "LinkedIn", href: "https://linkedin.com/in/prince-busa", icon: Linkedin },
-  { label: "X", href: "https://x.com/Prince_busa13", icon: Twitter },
+  { label: "X", href: "https://x.com/princebusa_", icon: Twitter },
   { label: "Resume", href: "/resume.pdf", icon: FileText },
 ];
 
