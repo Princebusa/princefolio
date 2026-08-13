@@ -1,19 +1,7 @@
 import TradeX from "../assets/tradex.jpeg";
 import sloth from "../assets/sloth.png";
+import brick from "../assets/brick.jpeg";
 import flow from "../assets/syncflow.jpeg";
-import ts from "../assets/tech/typescript.svg";
-import js from "../assets/tech/js.svg";
-import node from "../assets/tech/nodejs.svg";
-import next from "../assets/tech/nextjs2-light.svg";
-import react from "../assets/tech/react.svg";
-import bun from "../assets/tech/bun.svg";
-import tailwind from "../assets/tech/tailwindcss.svg";
-import mongo from "../assets/tech/mongodb.svg";
-
-export type ProjectTech = {
-  id: string;
-  icon: string;
-};
 
 export type Project = {
   id: string;
@@ -23,7 +11,7 @@ export type Project = {
   gradient: string;
   demoUrl?: string;
   codeUrl?: string;
-  tech: ProjectTech[];
+  highlights: string[];
 };
 
 /** Add a new project here — it will show up automatically in the grid. */
@@ -35,15 +23,12 @@ export const projects: Project[] = [
       "A comprehensive study platform with notes, flashcards, quizzes, AI chatbot, and interactive learning tools.",
     image: sloth,
     gradient: "linear-gradient(135deg, #86efac 0%, #fef08a 100%)",
-    demoUrl: "#",
+    demoUrl: "https://sloth.princebusa.com",
     codeUrl: "https://github.com/Princebusa/Sloth-RAG-agent",
-    tech: [
-      { id: "ts", icon: ts },
-      { id: "js", icon: js },
-      { id: "node", icon: node },
-      { id: "next", icon: next },
-      { id: "react", icon: react },
-      { id: "bun", icon: bun },
+    highlights: [
+      "Drive Sync Worker",
+      "Embedding Generation",
+      "Qdrant Vector Store",
     ],
   },
   {
@@ -55,12 +40,26 @@ export const projects: Project[] = [
     gradient: "linear-gradient(135deg, #f9a8d4 0%, #fbcfe8 55%, #fda4af 100%)",
     demoUrl: "https://tradex.princebusa.com",
     codeUrl: "https://github.com/Princebusa/CEX",
-    tech: [
-      { id: "ts", icon: ts },
-      { id: "react", icon: react },
-      { id: "next", icon: next },
-      { id: "tailwind", icon: tailwind },
-      { id: "node", icon: node },
+    highlights: [
+      "live Order Book",
+      "Redis Streams",
+      "Order Matching Engine",
+    ],
+  },
+  {
+    id: "brick",
+    title: "Brick - AI Webapp builder",
+    description:
+      "From text to live webapp in seconds. E2B sandbox for code execution. live preview and aws s3 backup so you never lost your work.",
+    image: brick,
+    gradient: "linear-gradient(135deg, #99f6e4 0%, #a5b4fc 100%)",
+    demoUrl: "https://brick.princebusa.com",
+    codeUrl: "https://github.com/Princebusa/brick",
+    highlights: [
+      "Tool-calling LLM Agent",
+      "AWS S3 backup",
+      "E2B sandbox execution",
+
     ],
   },
   {
@@ -72,12 +71,10 @@ export const projects: Project[] = [
     gradient: "linear-gradient(135deg, #99f6e4 0%, #a5b4fc 100%)",
     demoUrl: "#",
     codeUrl: "https://github.com/Princebusa/FlowSync",
-    tech: [
-      { id: "ts", icon: ts },
-      { id: "react", icon: react },
-      { id: "tailwind", icon: tailwind },
-      { id: "mongo", icon: mongo },
-      { id: "node", icon: node },
+    highlights: [
+      "Node-Based Editor UI",
+      "Redis Queue",
+      "Execution worker",
     ],
   },
 ];

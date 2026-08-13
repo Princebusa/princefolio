@@ -64,13 +64,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </p>
 
         <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
-          {project.tech.map((item) => (
+          {project.highlights.map((point) => (
             <span
-              key={item.id}
-              className="inline-flex items-center gap-1.5 rounded-md border border-[var(--border)] bg-[var(--lumen-dark)] px-2 py-1 text-[11px] font-medium text-[var(--charcoal)]"
+              key={point}
+              className="inline-flex items-center rounded-full border border-[var(--dawn)]/20 bg-[var(--dawn)]/10 px-2 py-1 text-[11px] font-medium text-[var(--dawn)]"
             >
-              <img src={item.icon} alt="" className="h-3 w-3" />
-           
+              {point}
             </span>
           ))}
         </div>
