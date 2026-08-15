@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import dechub from "../assets/dechub_logo.jfif";
@@ -11,11 +11,25 @@ const roles = [
     location: "Bangalore, IN",
     locationType: "Remote",
     points: [
-      "Developing and maintaining scalable full-stack applications using React, Next.js, Node.js, and modern APIs",
-      "Designing clean, responsive UIs with Tailwind CSS and smooth motion-based interactions",
-      "Optimizing applications for speed, SEO, and accessibility",
-      "Building secure, high-performance backend services for auth, databases, and server logic",
-    ],
+      <>
+        Owned <span className="font-semibold text-[var(--vast)]">end-to-end development</span> and production delivery of a{" "}
+        <span className="font-semibold text-[var(--vast)]">CRM</span>, from{" "}
+        <span className="font-semibold text-[var(--vast)]">system design</span> and{" "}
+        <span className="font-semibold text-[var(--vast)]">database implementation</span> to{" "}
+        <span className="font-semibold text-[var(--vast)]">deployment</span> and maintenance.
+      </>,
+      <>
+        Designed and executed a{" "}
+        <span className="font-semibold text-[var(--vast)]">production database migration</span> for a{" "}
+        <span className="font-semibold text-[var(--vast)]">high-traffic application</span>,{" "}
+        <span className="font-semibold text-[var(--vast)]">minimizing downtime</span> and ensuring uninterrupted service for active users.
+      </>,
+      <>
+        Built and maintained{" "}
+        <span className="font-semibold text-[var(--vast)]">Docker-based deployment workflows</span> and{" "}
+        <span className="font-semibold text-[var(--vast)]">CI/CD pipelines</span>, improving the reliability and efficiency of application releases.
+      </>,
+    ] as ReactNode[],
   },
   {
     company: "Dechub",
@@ -24,11 +38,30 @@ const roles = [
     location: "Bangalore, IN",
     locationType: "Remote",
     points: [
-      "Assisted in building production-ready features using React, JavaScript, and REST APIs",
-      "Implemented responsive layouts and UI components with Tailwind CSS",
-      "Worked closely with senior developers to debug, refactor, and improve performance",
-      "Integrated frontend components with backend services and API data flows",
-    ],
+      <>
+        Built and integrated frontend features for{" "}
+        <span className="font-semibold text-[var(--vast)]">Tanishq</span>, developing{" "}
+        <span className="font-semibold text-[var(--vast)]">responsive UIs</span> with{" "}
+        <span className="font-semibold text-[var(--vast)]">React</span>,{" "}
+        <span className="font-semibold text-[var(--vast)]">Tailwind CSS</span>, and backend{" "}
+        <span className="font-semibold text-[var(--vast)]">API integrations</span>.
+      </>,
+      <>
+        Contributed to the development of an{" "}
+        <span className="font-semibold text-[var(--vast)]">end-to-end CRM</span>, working closely with the{" "}
+        <span className="font-semibold text-[var(--vast)]">founding team</span> across{" "}
+        <span className="font-semibold text-[var(--vast)]">frontend</span>,{" "}
+        <span className="font-semibold text-[var(--vast)]">backend</span>, and{" "}
+        <span className="font-semibold text-[var(--vast)]">database</span> workflows.
+      </>,
+      <>
+        Assisted in{" "}
+        <span className="font-semibold text-[var(--vast)]">production deployments</span> and infrastructure setup using{" "}
+        <span className="font-semibold text-[var(--vast)]">Docker</span> and{" "}
+        <span className="font-semibold text-[var(--vast)]">CI/CD</span>, gaining hands-on experience{" "}
+        <span className="font-semibold text-[var(--vast)]">shipping applications</span> to live environments.
+      </>,
+    ] as ReactNode[],
   },
 ];
 
@@ -126,10 +159,10 @@ export default function Exp() {
                     className="overflow-hidden"
                   >
                     <ul className="flex flex-col gap-2 border-t border-[var(--border)] px-0 pb-5 pt-4 sm:pl-0">
-                      {role.points.map((point) => (
+                      {role.points.map((point, pointIndex) => (
                         <li
-                          key={point}
-                          className="relative pl-4 text-[13px] leading-[1.55] text-[var(--charcoal)]/70 before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[var(--glow)] sm:text-[14px]"
+                          key={pointIndex}
+                          className="relative font-[500] pl-4 text-[12px] leading-[1.55] text-[var(--charcoal)]/70 before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-[var(--glow)] sm:text-[13px]"
                         >
                           {point}
                         </li>

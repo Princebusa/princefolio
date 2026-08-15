@@ -1,5 +1,6 @@
 import prince from "../assets/prince.jpeg";
 import toon from "../assets/toon.png";
+import resume from "../assets/Prince Resume.pdf";
 import { motion } from "motion/react";
 import {
   FileText,
@@ -16,7 +17,7 @@ const links = [
   { label: "GitHub", href: "https://github.com/princebusa", icon: Github },
   { label: "LinkedIn", href: "https://linkedin.com/in/prince-busa", icon: Linkedin },
   { label: "X", href: "https://x.com/princebusa_", icon: Twitter },
-  { label: "Resume", href: "/resume.pdf", icon: FileText },
+  { label: "Resume", href: resume, icon: FileText },
 ];
 
 export default function Intro() {

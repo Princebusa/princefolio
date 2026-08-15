@@ -6,6 +6,7 @@ import {
   Mail,
   Twitter,
 } from "lucide-react";
+import resume from "../assets/Prince Resume.pdf";
 
 const contacts = [
   {
@@ -28,7 +29,7 @@ const contacts = [
   },
   {
     label: "X",
-    value: "@Prince_busa13",
+    value: "@princebusa_",
     href: "https://x.com/princebusa_",
     icon: Twitter,
   },
@@ -83,7 +84,7 @@ export default function Contact() {
       </div>
 
       <a
-        href="/resume.pdf"
+        href={resume}
         target="_blank"
         rel="noopener noreferrer"
         className="btn-fathom mt-6 w-full sm:w-auto"
