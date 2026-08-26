@@ -22,7 +22,7 @@ const links = [
 
 export default function Intro() {
   return (
-    <section className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-5 sm:p-8">
+    <section className="rounded-2xl border border-[var(--border)] bg-[var(--white)] p-5 sm:p-8 jjj">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function Intro() {
           <h2 className="text-lg font-semibold  leading-tight text-[var(--vast)]" style={{ fontFamily: "var(--font-body)" }}>
             Prince Busa
           </h2>
-          <p className="text-sm font-medium text-[var(--charcoal)]/60">Full Stack Developer</p>
+          <p className="text-sm font-medium text-[var(--charcoal)]/60">Software Engineer</p>
         </div>
       </motion.div>
 
@@ -61,25 +61,13 @@ export default function Intro() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, delay: 0.05 }}
-        className="!mt-8 !mb-6 font-serif text-3xl tracking-wide text-[var(--vast)] sm:text-4xl"
-        style={{ fontFamily: "var(--font-display)" }}
+        className="!mt-8 !mb-6 font-serif tracking-0 text-[var(--vast)] text-[15.5px] leading-[22px]"
+        style={{ fontFamily: "var(--font-body)" }}
       >
-        Engineering Digital Experiences
+        Based in Gujarat, India. I design and build full stack web apps and AI products.
       </motion.h1>
 
-      <motion.div
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.1 }}
-        className="mb-8 flex flex-wrap gap-3"
-      >
-        <a href="#contact" className="btn-dawn">
-          Get in touch
-        </a>
-        <a href="#projects" className="btn-ghost">
-          View projects
-        </a>
-      </motion.div>
+     
 
       <div>
       
@@ -90,10 +78,16 @@ export default function Intro() {
               href={href}
               target={label === "Email" ? undefined : "_blank"}
               rel={label === "Email" ? undefined : "noopener noreferrer"}
-              className="chip transition-colors hover:border-[var(--dawn)]"
+              aria-label={label}
+              className="chip group relative transition-colors hover:border-[var(--dawn)]"
             >
               <Icon size={14} className="text-[var(--dawn)]" />
-              {label}
+              <span
+                className="icon-tooltip pointer-events-none opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100"
+                role="tooltip"
+              >
+                {label}
+              </span>
             </a>
           ))}
         </div>

@@ -2,6 +2,58 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+.jjj
+   {
+position: relative;
+    background: white;
+    overflow: hidden;
+  }
+  
+  .jjj::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  
+    /* Infinite dots */
+    background-image: radial-gradient(
+      circle,
+      #cfd8d5 1.5px,
+      transparent 1px
+    );
+    background-size: 7px 7px;
+  
+    /* Keep dots mainly in top-right and fade them out */
+    -webkit-mask-image: radial-gradient(
+    ellipse 75% 65% at 100% 0%,
+    black 0%,
+    black 20%,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0.3) 55%,
+    transparent 75%
+  );
+
+  mask-image: radial-gradient(
+    ellipse 75% 65% at 100% 0%,
+    black 0%,
+    black 20%,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0.3) 55%,
+    transparent 75%
+  );
+  
+}
+/* .bg-green-grid{
+
+
+
+
+  background-image:
+    linear-gradient(to right, #dce4e1 1px, transparent 1px),
+    linear-gradient(to bottom, #dce4e1 1px, transparent 1px);
+
+  background-size: 40px 40px;
+} */
 :root {
   /* Neutral zinc / black / white + subtle teal accent */
   --lumen: #ffffff;
@@ -64,13 +116,13 @@ html.dark {
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
@@ -229,7 +281,7 @@ a {
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--lumen-dark);
-  padding: 6px 12px;
+  padding: 8px 8px;
   font-size: 13px;
   font-weight: 500;
   color: var(--vast);
@@ -251,4 +303,33 @@ a {
   height: 6px;
   border-radius: 999px;
   background: var(--dawn);
+}
+
+.icon-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  z-index: 10;
+  translate: -50% 0;
+  border-radius: 8px;
+  background: var(--vast);
+  color: var(--lumen);
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.icon-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  translate: -50% 0;
+  width: 10px;
+  height: 6px;
+  background: var(--vast);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
 }
