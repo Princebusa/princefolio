@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         href={primaryHref || project.codeUrl || "#"}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative block h-[180px] overflow-hidden rounded-[13px] sm:h-[180px]"
+        className="relative block h-[180px] overflow-hidden rounded-[13px] sm:h-[200px]"
         style={{ background: project.gradient }}
       >
         {/* Preview framed bottom-right, clipped by card overflow */}
